@@ -1,0 +1,57 @@
+h1, h2 {
+    font-size: 60px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+}
+
+
+.container {
+    width: 600px;
+    margin: auto;
+    cursor: url(../img/palu-2.png), auto;
+}
+
+.container:active {
+    cursor: url(../img/palu-1.png), auto;
+}
+
+.dirt {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    pointer-events: none;
+}
+
+.dirt::after {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 200px;
+    background: url(../img/dirt.png) bottom center no-repeat;
+    background-size: 80%;
+    position: absolute;
+    bottom: -30px;
+}
+
+.mole {
+    width: 100%;
+    height: 100%;
+    background: url(../img/mole.png) bottom center no-repeat;
+    background-size: 60%;
+    position: absolute;
+    top: 100px;
+    transition: top 0.3s ease;
+    pointer-events: auto;
+}   
+
+.dirt.appeared .mole {
+    top: -15px;
+}
+
+button {
+    display: block;
+    margin: auto;
+}
